@@ -18,7 +18,6 @@ if(isset($_POST['search'])){
             $description = $row['description'];
             $id = $row['id'];
             
-            // $output .= "<div>".$bobaName.' '.$type.' '.$description."</div>";
             $output .="
             <tr>
             <td>$bobaName</td>
@@ -47,10 +46,8 @@ if(isset($_POST['search'])){
     </header>
     <main class="container">
         <section>
-            <p align="center">
+            <p>
                 <form class="form-inline" action="searchPage.php" method="post">
-                    <!--<input type="text" name="search" placeholder="Search Drinks">-->
-                    <!--<input type="submit" value=">>">-->
                   <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
