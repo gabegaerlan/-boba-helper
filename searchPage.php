@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 mysql_connect("us-cdbr-iron-east-03.cleardb.net","b1f0aa2908c861","0eb70cc4") or die ("could not connect");
 mysql_select_db("heroku_e9d1cc3ad148014") or die("could not find db");
@@ -30,6 +29,7 @@ if(isset($_POST['search'])){
     }
 }
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
