@@ -11,13 +11,16 @@
     <header>
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Gabes Boba Helper</a>
-        <form class="form-inline">
+        <form class="form-inline" action="index.php" method="post">
           <a class="nav-link active" href="addPage.php">Create Drink</a>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <!--<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">-->
+          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+          <a class="nav-link active" href="searchPage.php">Search</a>
         </form>
       </nav>
     </header>
+    
+    
     <main class="container">
       <section>
         <p>
