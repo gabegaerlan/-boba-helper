@@ -2,20 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Gabe Boba Training</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="/">Gabes Boba</a>
-        <form class="form-inline">
-          <a class="nav-link active" href="addPage.php">Create Drink</a>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </nav>
     </header>
     <main class="container">
