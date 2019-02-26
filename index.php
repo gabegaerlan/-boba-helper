@@ -1,3 +1,7 @@
+<?php
+session_start();
+header("Location: searchPage.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,30 +23,29 @@
         </form>
       </nav>
     </header>
-    
-    
-    <main class="container">
-      <section>
-        <p>
-          <table align="center" border=2>
-            <th><b>BOBA NAME</b></th>
-            <th><b>TYPE</b></th>
-            <th><b>DESCRIPTION</b></th>
-            <?php
-              include'./functions.php';
-              $display = displayBoba();
-              foreach($display as $d)
-              {
-                echo'<tr>';
-                echo'<td>'.$d['bobaName'].'</td>';
-                echo'<td>'.$d['type'].'</td>';
-                echo'<td>'.$d['description'].'</td>';
-                echo'</tr>';
-              }
-            ?>
-          </table>
-        </p>
-      </section>
-    </main>
+    <!--<main class="container">-->
+    <!--  <section>-->
+    <!--    <p>-->
+    <!--      <table align="center" border=2>-->
+    <!--        <th><b>BOBA NAME</b></th>-->
+    <!--        <th><b>TYPE</b></th>-->
+    <!--        <th><b>DESCRIPTION</b></th>-->
+    <!--        <?php-->
+    <!--          include'./functions.php';-->
+    <!--          $display = displayBoba();-->
+    <!--          foreach($display as $d)-->
+    <!--          {-->
+    <!--            echo'<tr>';-->
+    <!--            echo'<td>'.$d['bobaName'].'</td>';-->
+    <!--            echo'<td>'.$d['type'].'</td>';-->
+    <!--            echo'<td>'.$d['description'].'</td>';-->
+    <!--            echo'</tr>';-->
+    <!--          }-->
+              
+    <!--        ?>-->
+    <!--      </table>-->
+    <!--    </p>-->
+    <!--  </section>-->
+    <!--</main>-->
   </body>
 </html>

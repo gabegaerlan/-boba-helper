@@ -8,7 +8,7 @@ if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    $query = "SELECT * FROM boba WHERE bobaName LIKE '%$searchq%' OR type LIKE '%$searchq%'";
+    $query = "SELECT * FROM boba WHERE bobaName LIKE '%$searchq%' OR type LIKE '%$searchq%' ORDER BY type";
     $stmt = $conn->prepare($query);
     $stmt->execute([$searchq]);
     $count = $stmt->fetchColumn();
