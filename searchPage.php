@@ -1,23 +1,27 @@
 <?php
-mysql_connect("us-cdbr-iron-east-03.cleardb.net","b1f0aa2908c861","0eb70cc4") or die ("could not connect");
-mysql_select_db("heroku_e9d1cc3ad148014") or die("could not find db");
+session_start();
+include './db.php';
+$conn = getDatabaseConnection();
 $output = '';
 
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
     
-    $query = mysql_query("SELECT * FROM boba WHERE bobaName LIKE '%$searchq%' OR type LIKE '%$searchq%'") or die("could not search");
-    $count = mysql_num_rows($query);
+    $query = "SELECT * FROM boba WHERE bobaName LIKE '%$searchq%' OR type LIKE '%$searchq%'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute([$searchq]);
+    $count = $stmt->fetchColumn();
+    $checkQuery = $conn->query($query);
     if($count == 0){
-        $output = 'There was no search results!'; 
-    }else{
-        while($row = mysql_fetch_array($query)){
+      $output = 'There was no search results!'; 
+    }
+    else{
+        foreach($checkQuery as $row){
             $bobaName = $row['bobaName'];
             $type = $row['type'];
             $description = $row['description'];
             $id = $row['id'];
-            
             $output .="
             <tr>
             <td>$bobaName</td>

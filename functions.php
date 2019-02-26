@@ -7,7 +7,7 @@ function displayBoba()
      $conn = getDatabaseConnection();
       $sql = "SELECT *
               FROM boba
-              ORDER BY id";
+              ORDER BY type";
               
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -46,4 +46,5 @@ function addBoba()
         header("Location: index.php");
     }    
 }
+
 ?>
