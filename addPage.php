@@ -16,6 +16,9 @@
     <main class="container">
     <?php
     include'./functions.php';
+    if(!isset($_SESSION['admin'])){
+      header("Location: login.php");
+    }
     ?>
     <form method="GET">
       <section>

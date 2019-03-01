@@ -3,3 +3,15 @@
 
 /* @import Rule */
 @import url(styles.css) all and (max-width: 1024px) {...}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}

@@ -3,6 +3,10 @@ session_start();
 include './db.php';
 $conn = getDatabaseConnection();
 $output = '';
+if(!isset($_SESSION['admin']))// if(!isset($_SESSION['userName']) || !isset($_SESSION['adminName']))
+{
+    header("Location: login.php");
+}
 
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
@@ -27,6 +31,7 @@ if(isset($_POST['search'])){
             <td><a href='display.php?id=".$row['id']."'>$bobaName</a></td>
             <td>$type</td>
             <td>$description</td>
+            <td><a href='edit.php?id=".$row['id']."'>Edit</a>/"."<a href='delete.php?id=".$row['id']."'>Delete</td>
             </tr>
             ";
         }
@@ -46,12 +51,14 @@ if(isset($_POST['search'])){
     <header>
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Gabes Boba Helper</a>
+        <a class="nav-link active" href="addPage.php">Create Drink</a>
+        <a class="nav-link active" href="logout.php">Logout</a>
       </nav>
     </header>
     <main class="container">
         <section>
             <p>
-                <form class="form-inline" action="searchPage.php" method="post">
+                <form class="form-inline" action="admin.php" method="post">
                   <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -59,6 +66,7 @@ if(isset($_POST['search'])){
                   <th><b>BOBA NAME</b></th>
                   <th><b>TYPE</b></th>
                   <th><b>DESCRIPTION</b></th>
+                  <th><b>UPDATE/DELETE</b></th>
                   <?php print("$output");?>
                 </table>
             </p>
